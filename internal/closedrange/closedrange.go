@@ -1,9 +1,11 @@
 package closedrange
 
 type Closedrange struct {
+	lower int
+	upper int
 }
 
-func NewClosedrange(int, int) *Closedrange {
-	c := &Closedrange{}
+func NewClosedrange(lower int, upper int) *Closedrange {
+	c := &Closedrange{lower, upper}
 	return c
 }
