@@ -129,3 +129,16 @@ func TestNotEqual(t *testing.T) {
 	// 検証
 	assert.Equal(t, result, false, "与えた閉区間が元の閉区間と等しくない")
 }
+
+func TestNotEqualToNil(t *testing.T) {
+	// 初期化
+	lower1 := 1
+	upper1 := 3
+	obj1 := NewClosedrange(lower1, upper1)
+
+	// 動作
+	result := obj1.Equal(nil)
+
+	// 検証
+	assert.Equal(t, result, false, "与えた閉区間がNilである")
+}
