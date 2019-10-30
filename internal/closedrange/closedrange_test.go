@@ -41,3 +41,31 @@ func TestLowerUpperEqual(t *testing.T) {
 	// 検証
 	assert.NotNil(t, obj, "作成されたObjectがNilじゃない")
 }
+
+func TestInclude(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	number := 2
+	obj := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj.include(number)
+
+	// 検証
+	assert.Equal(t, result, true, "与えた数字が閉区間に含まれる")
+}
+
+func TestNotInclude(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	number := 0
+	obj := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj.include(number)
+
+	// 検証
+	assert.Equal(t, result, false, "与えた数字が閉区間に含まれない")
+}
