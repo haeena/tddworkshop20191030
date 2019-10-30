@@ -50,7 +50,7 @@ func TestInclude(t *testing.T) {
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
-	result := obj.include(number)
+	result := obj.Include(number)
 
 	// 検証
 	assert.Equal(t, result, true, "与えた数字が閉区間に含まれる")
@@ -64,7 +64,7 @@ func TestNotInclude(t *testing.T) {
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
-	result := obj.include(number)
+	result := obj.Include(number)
 
 	// 検証
 	assert.Equal(t, result, false, "与えた数字が閉区間に含まれない")
