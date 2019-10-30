@@ -69,3 +69,31 @@ func TestNotInclude(t *testing.T) {
 	// 検証
 	assert.Equal(t, result, false, "与えた数字が閉区間に含まれない")
 }
+
+func TestIncludeUppperEqual(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	number := 3
+	obj := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj.Include(number)
+
+	// 検証
+	assert.Equal(t, result, true, "与えた数字が閉区間の上端と等しい")
+}
+
+func TestIncludeLowerEqual(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	number := 1
+	obj := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj.Include(number)
+
+	// 検証
+	assert.Equal(t, result, true, "与えた数字が閉区間の下端と等しい")
+}
