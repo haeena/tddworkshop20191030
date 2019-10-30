@@ -127,5 +127,5 @@ func TestNotEqual(t *testing.T) {
 	result := obj1.Equal(obj2)
 
 	// 検証
-	assert.Equal(t, result, true, "与えた閉区間が元の閉区間と等しい")
+	assert.Equal(t, result, false, "与えた閉区間が元の閉区間と等しくない")
 }
