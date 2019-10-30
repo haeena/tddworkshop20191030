@@ -20,3 +20,15 @@ func TestCreateClosedrange(t *testing.T) {
 	// 掃除
 
 }
+
+func TestCheckLowerUpper(t *testing.T) {
+	// 初期化
+	lower := 2
+	upper := 1
+	obj := NewClosedrange(lower, upper)
+	// 動作
+
+	// 検証
+	assert.Nil(t, obj, "作成されたObjectがNilじゃない")
+
+}
