@@ -97,3 +97,35 @@ func TestIncludeLowerEqual(t *testing.T) {
 	// 検証
 	assert.Equal(t, result, true, "与えた数字が閉区間の下端と等しい")
 }
+
+func TestEqual(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	obj1 := NewClosedrange(lower, upper)
+
+	obj2 := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj1.Equal(obj2)
+
+	// 検証
+	assert.Equal(t, result, true, "与えた閉区間が元の閉区間と等しい")
+}
+
+func TestNotEqual(t *testing.T) {
+	// 初期化
+	lower1 := 1
+	upper1 := 3
+	obj1 := NewClosedrange(lower1, upper1)
+
+	lower2 := 1
+	upper2 := 2
+	obj2 := NewClosedrange(lower2, upper2)
+
+	// 動作
+	result := obj1.Equal(obj2)
+
+	// 検証
+	assert.Equal(t, result, true, "与えた閉区間が元の閉区間と等しい")
+}
