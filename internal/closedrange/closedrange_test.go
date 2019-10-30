@@ -214,7 +214,7 @@ func TestIncludeClosedrangePattern(t *testing.T) {
 		} else {
 			expected_str = "not included"
 		}
-		test_desc := fmt.Sprintf("%v should %s in %v", obj1, expected_str, obj2)
+		test_desc := fmt.Sprintf("%v should %s in %v", obj2, expected_str, obj1)
 
 		t.Run(test_desc, func(t *testing.T) {
 			//t.Parallel()
