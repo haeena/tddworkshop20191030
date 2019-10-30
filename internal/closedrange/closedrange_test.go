@@ -9,8 +9,8 @@ import (
 
 func TestCreateClosedrange(t *testing.T) {
 	// 初期化
-	lower := 0
-	upper := 1
+	lower := 3
+	upper := 8
 	obj := NewClosedrange(lower, upper)
 	// 動作
 
@@ -45,22 +45,22 @@ func TestLowerUpperEqual(t *testing.T) {
 
 func TestString(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
+	lower := 3
+	upper := 8
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
 	result := obj.String()
 
 	// 検証
-	assert.Equal(t, result, "[1,3]", "閉区間の文字列表現が正しい")
+	assert.Equal(t, result, "[3,8]", "閉区間の文字列表現が正しい")
 }
 
 func TestInclude(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
-	number := 2
+	lower := 3
+	upper := 8
+	number := 5
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
@@ -72,8 +72,8 @@ func TestInclude(t *testing.T) {
 
 func TestNotInclude(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
+	lower := 3
+	upper := 8
 	number := 0
 	obj := NewClosedrange(lower, upper)
 
@@ -86,9 +86,9 @@ func TestNotInclude(t *testing.T) {
 
 func TestIncludeUppperEqual(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
-	number := 3
+	lower := 3
+	upper := 8
+	number := 8
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
@@ -100,9 +100,9 @@ func TestIncludeUppperEqual(t *testing.T) {
 
 func TestIncludeLowerEqual(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
-	number := 1
+	lower := 3
+	upper := 8
+	number := 3
 	obj := NewClosedrange(lower, upper)
 
 	// 動作
@@ -114,8 +114,8 @@ func TestIncludeLowerEqual(t *testing.T) {
 
 func TestEqual(t *testing.T) {
 	// 初期化
-	lower := 1
-	upper := 3
+	lower := 3
+	upper := 8
 	obj1 := NewClosedrange(lower, upper)
 
 	obj2 := NewClosedrange(lower, upper)
@@ -129,8 +129,8 @@ func TestEqual(t *testing.T) {
 
 func TestNotEqual(t *testing.T) {
 	// 初期化
-	lower1 := 1
-	upper1 := 3
+	lower1 := 3
+	upper1 := 8
 	obj1 := NewClosedrange(lower1, upper1)
 
 	lower2 := 1
@@ -146,24 +146,24 @@ func TestNotEqual(t *testing.T) {
 
 func TestNotEqualToNil(t *testing.T) {
 	// 初期化
-	lower1 := 1
-	upper1 := 3
-	obj1 := NewClosedrange(lower1, upper1)
+	lower := 3
+	upper := 8
+	obj := NewClosedrange(lower, upper)
 
 	// 動作
-	result := obj1.Equal(nil)
+	result := obj.Equal(nil)
 
 	// 検証
 	assert.Equal(t, result, false, "与えた閉区間がNilである")
 }
 func TestIncludeClosedrangeNil(t *testing.T) {
 	// 初期化
-	lower1 := 1
-	upper1 := 5
-	obj1 := NewClosedrange(lower1, upper1)
+	lower := 3
+	upper := 8
+	obj := NewClosedrange(lower, upper)
 
 	// 動作
-	result := obj1.IncludeClosedrange(nil)
+	result := obj.IncludeClosedrange(nil)
 
 	// 検証
 	assert.Equal(t, result, false, "与えた閉区間がnilであり、含まれない")
