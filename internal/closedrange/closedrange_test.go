@@ -16,6 +16,7 @@ func createBaseClosedrange() *Closedrange {
 func TestCreateClosedrange(t *testing.T) {
 	// 初期化
 	obj := createBaseClosedrange()
+
 	// 動作
 
 	// 検証
