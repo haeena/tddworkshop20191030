@@ -7,11 +7,15 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+var lower, upper int = 3, 8
+
+func createBaseClosedrange() *Closedrange {
+	return NewClosedrange(lower, upper)
+}
+
 func TestCreateClosedrange(t *testing.T) {
 	// 初期化
-	lower := 3
-	upper := 8
-	obj := NewClosedrange(lower, upper)
+	obj := createBaseClosedrange()
 	// 動作
 
 	// 検証
@@ -45,9 +49,12 @@ func TestLowerUpperEqual(t *testing.T) {
 
 func TestString(t *testing.T) {
 	// 初期化
-	lower := 3
-	upper := 8
-	obj := NewClosedrange(lower, upper)
+	/*
+		lower := 3
+		upper := 8
+		obj := NewClosedrange(lower, upper)
+	*/
+	obj := createBaseClosedrange()
 
 	// 動作
 	result := obj.String()
