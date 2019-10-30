@@ -244,3 +244,16 @@ func TestIncludeClosedrange6(t *testing.T) {
 	// 検証
 	assert.Equal(t, result, false, "与えた閉区間が閉区間に含まれない")
 }
+
+func TestIncludeClosedrangeNil(t *testing.T) {
+	// 初期化
+	lower1 := 1
+	upper1 := 5
+	obj1 := NewClosedrange(lower1, upper1)
+
+	// 動作
+	result := obj1.IncludeClosedrange(nil)
+
+	// 検証
+	assert.Equal(t, result, false, "与えた閉区間がnilであり、含まれない")
+}
