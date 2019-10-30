@@ -25,5 +25,8 @@ func (c1 *Closedrange) Equal(c2 *Closedrange) bool {
 }
 
 func (c1 *Closedrange) IncludeClosedrange(c2 *Closedrange) bool {
+	if c2 == nil {
+		return false
+	}
 	return c2.lower >= c1.lower && c2.upper <= c1.upper
 }
