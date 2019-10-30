@@ -217,10 +217,10 @@ func TestIncludeClosedrangePattern(t *testing.T) {
 		test_desc := fmt.Sprintf("%v should %s in %v", obj2, expected_str, obj1)
 
 		t.Run(test_desc, func(t *testing.T) {
-			//t.Parallel()
+			t.Parallel()
 			result := obj1.IncludeClosedrange(obj2)
 
-			assert.Equal(t, result, testcase.expected)
+			assert.Equal(t, result, expected)
 		})
 	}
 
