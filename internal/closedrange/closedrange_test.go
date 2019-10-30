@@ -43,6 +43,19 @@ func TestLowerUpperEqual(t *testing.T) {
 	assert.NotNil(t, obj, "作成されたObjectがNilじゃない")
 }
 
+func TestString(t *testing.T) {
+	// 初期化
+	lower := 1
+	upper := 3
+	obj := NewClosedrange(lower, upper)
+
+	// 動作
+	result := obj.String()
+
+	// 検証
+	assert.Equal(t, result, "[1,3]", "閉区間の文字列表現が正しい")
+}
+
 func TestInclude(t *testing.T) {
 	// 初期化
 	lower := 1
