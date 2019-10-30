@@ -31,7 +31,7 @@ func TestCheckLowerUpper(t *testing.T) {
 	assert.Nil(t, obj, "作成されたObjectがNilじゃない")
 }
 
-func TestCheckLowerUpperEquall(t *testing.T) {
+func TestCheckLowerUpperEqual(t *testing.T) {
 	// 初期化
 	lower := 1
 	upper := 1
