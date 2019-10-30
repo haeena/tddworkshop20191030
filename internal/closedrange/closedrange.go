@@ -1,5 +1,7 @@
 package closedrange
 
+import "fmt"
+
 type Closedrange struct {
 	lower int
 	upper int
@@ -11,6 +13,10 @@ func NewClosedrange(lower int, upper int) *Closedrange {
 	}
 	c := &Closedrange{lower, upper}
 	return c
+}
+
+func (c *Closedrange) String() string {
+	return fmt.Sprintf("[%d,%d]", c.lower, c.upper)
 }
 
 func (c *Closedrange) Include(number int) bool {
