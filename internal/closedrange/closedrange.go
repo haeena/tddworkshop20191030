@@ -16,3 +16,7 @@ func NewClosedrange(lower int, upper int) *Closedrange {
 func (c *Closedrange) Include(number int) bool {
 	return c.lower <= number && number <= c.upper
 }
+
+func (c1 *Closedrange) Equal(c2 *Closedrange) bool {
+	return c1.lower == c2.lower && c1.upper == c2.upper
+}
